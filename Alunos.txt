@@ -1,0 +1,9 @@
+NOME: Aurino
+IDADE: 20
+
+NOME: Aurino Alcioneu
+IDADE: 20
+
+NOME: Aurino Alcioneu Geraldo Junior
+IDADE: 20
+
