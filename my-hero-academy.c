@@ -97,7 +97,7 @@ void salvar(Lista *lista){
 
 int main (){
 	
-	int op, qtdAlunos;
+	int op;
 	
 	Lista lista; 
 	Aluno al;
