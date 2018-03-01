@@ -68,6 +68,38 @@ void listagem(Lista *lista){
 		printf("SEM DADOS !!!\n\n");	
 }
 
+//Busca alunos pelo nome
+void buscarAluno(Lista *lista){
+	if(lista->nElem>=1){
+		char nome[30];
+		int i;
+		int x=0; //quantidade achada;
+		Aluno al;
+	
+		printf("Qual nome deseja pesquisar: ");
+		scanf("%s",&nome);
+		
+		for(i=0; i<lista->nElem;i++){
+			if(strcasecmp(nome,lista->aluno[i].s_nome)==0){
+
+				al=lista->aluno[i];
+				
+				printf("\nNOME: %s",al.s_nome);
+				printf("\nIDADE: %d", al.idade);
+				printf("\n\n");
+				
+				x=1;
+			}
+		}
+		
+		if(x==0){
+			printf("\nNenhum dado encontrado !!!\n\n");
+		}
+		
+	}else
+		printf("Seria melhor criar uma lista primeiro !!!\n\n");	
+}
+
 //Salva dados em arquivo .txt
 void salvar(Lista *lista){
 	
@@ -111,7 +143,8 @@ int main (){
 		printf("Cadastrar Aluno - 2\n");
 		printf("Listar Alunos - 3\n");
 		printf("Excluir lista - 4\n");
-		printf("Salvar Lista em arquivo Alunos.txt - 5\n\n");
+		printf("Buscar aluno [por nome] - 5\n");
+		printf("Salvar Lista em arquivo Alunos.txt - 6\n\n");
 		
 		
 		printf("\n\nEscolha uma opcao: ");
@@ -153,7 +186,11 @@ int main (){
 				excluirLista(&lista);
 				break;
 			
-			case 5:							
+			case 5:
+				buscarAluno(&lista);
+				break;				
+			
+			case 6:							
 				salvar(&lista);
 				
 				break;
